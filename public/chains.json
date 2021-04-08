@@ -213,7 +213,7 @@
     "nativeCurrency": {"name":"Huobi ECO Chain Native Token","symbol":"HT","decimals":18},
     "rpc": ["https://http-mainnet.hecochain.com","wss://ws-mainnet.hecochain.com"],
     "faucets": [],
-    "infoURL": "https://www.hecochain.com"
+    "infoURL": "https://hecoinfo.com"
   },
   {
     "name": "Moonbeam Polkadot",
@@ -705,7 +705,7 @@
     "nativeCurrency": {"name":"Huobi ECO Chain Test Native Token","symbol":"htt","decimals":18},
     "rpc": ["https://http-testnet.hecochain.com","wss://ws-testnet.hecochain.com"],
     "faucets": ["https://scan-testnet.hecochain.com/faucet"],
-    "infoURL": "https://www.hecochain.com"
+    "infoURL": "https://testnet.hecoinfo.com"
   },
   {
     "name": "High Performance Blockchain",
