@@ -165,7 +165,7 @@
     "nativeCurrency": {"name":"MathChain","symbol":"MATH","decimals":18},
     "rpc": [],
     "faucets": [],
-    "infoURL": "https://mathwallet.org"
+    "infoURL": "https://mathchain.org"
   },
   {
     "name": "MathChain Testnet",
@@ -175,9 +175,13 @@
     "network": "testnet",
     "networkId": 1140,
     "nativeCurrency": {"name":"MathChain","symbol":"MATH","decimals":18},
-    "rpc": [],
-    "faucets": [],
-    "infoURL": "https://mathwallet.org/"
+    "rpc": [
+      "https://galois-hk.maiziqianbao.net/rpc"
+    ],
+    "faucets": [
+      "https://scan.boka.network/#/Galois/faucet"
+    ],
+    "infoURL": "https://mathchain.org"
   },
   {
     "name": "Metadium Testnet",
