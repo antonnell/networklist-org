@@ -17,7 +17,7 @@
         "ws://116.62.244.90:60121"
     ],
     "faucets": [],
-    "infoURL": "116.62.244.90:40012",
+    "infoURL": "http://www.untokencan.com/#/",
     "app_resource": {
         "ic_chain_select": "https://files.moacchina.info/2021/12/14/e618eec7-4fb0-4210-bbee-6d0cee2c1650_1.png",
         "ic_chain_unselect": "https://files.moacchina.info/2021/12/14/ede37514-9792-443b-897f-01d1377256e0_2.png",
