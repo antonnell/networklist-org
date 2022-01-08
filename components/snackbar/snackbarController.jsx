@@ -6,6 +6,7 @@ import Snackbar from './snackbar.jsx'
 import {
   ERROR,
   TX_SUBMITTED,
+  PARAMS_COPIED,
 } from '../../stores/constants'
 
 import stores from "../../stores";
@@ -31,11 +32,13 @@ class SnackbarController extends Component {
 
   componentWillMount() {
     emitter.on(ERROR, this.showError);
+    emitter.on(PARAMS_COPIED, this.showInfo);
     emitter.on(TX_SUBMITTED, this.showHash);
   }
 
   componentWillUnmount() {
     emitter.removeListener(ERROR, this.showError);
+    emitter.removeListener(PARAMS_COPIED, this.showInfo);
     emitter.removeListener(TX_SUBMITTED, this.showHash);
   };
 
@@ -46,6 +49,17 @@ class SnackbarController extends Component {
     const that = this
     setTimeout(() => {
       const snackbarObj = { snackbarMessage: error.toString(), snackbarType: 'Error', open: true }
+      that.setState(snackbarObj)
+    })
+  }
+
+  showInfo = (message) => {
+    const snackbarObj = { snackbarMessage: null, snackbarType: null, open: false }
+    this.setState(snackbarObj)
+
+    const that = this
+    setTimeout(() => {
+      const snackbarObj = { snackbarMessage: message, snackbarType: 'Info', open: true }
       that.setState(snackbarObj)
     })
   }
