@@ -15,3 +15,4 @@ export default function Icon( { src , ...props }) {
       <img src={parseUrl(src)} {...props} />
     )
   }
+  
