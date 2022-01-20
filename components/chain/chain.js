@@ -102,7 +102,6 @@ export default function Chain({ chain }) {
       <div className={ classes.chainNameContainer }>
         <Icon
           src={iconUrl ? iconUrl : '/connectors/icn-asd.svg'}
-          alt="…"
           onError={e => {
             e.target.onerror = null;
             e.target.src = "/chains/unknown-logo.png";
