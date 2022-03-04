@@ -7,7 +7,6 @@ import path from 'path'
 import {
   Grid,
   Typography,
-  Button,
   TextField,
   InputAdornment,
   Paper
@@ -21,7 +20,6 @@ import Header from '../components/header'
 import SearchIcon from '@material-ui/icons/Search';
 import AppsIcon from '@material-ui/icons/Apps';
 import ListIcon from '@material-ui/icons/List';
-import AddIcon from '@material-ui/icons/Add';
 import useSWR from 'swr'
 
 import classes from './index.module.css'
@@ -103,10 +101,6 @@ function Home({ changeTheme, theme }) {
     }
   }
 
-  const addNetwork = () => {
-    window.open('https://github.com/ethereum-lists/chains', '_blank')
-  }
-
   const closeMultichain = (perma) => {
     setHideMultichain('1')
     localStorage.setItem('chainlist.org-hideMultichain', perma ? '1' : '0')
@@ -135,16 +129,6 @@ function Home({ changeTheme, theme }) {
               <Typography variant='h1' className={ classes.chainListSpacing }><span className={ classes.helpingUnderline }>Chainlist</span></Typography>
               <Typography variant='h2' className={ classes.helpingParagraph }>Helping users connect to EVM powered networks</Typography>
               <Typography className={classes.subTitle}>Chainlist is a list of EVM networks. Users can use the information to connect their wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.</Typography>
-              <Button
-                size='large'
-                color='primary'
-                variant='contained'
-                className={ classes.addNetworkButton }
-                onClick={ addNetwork }
-                endIcon={<AddIcon />}
-              >
-                <Typography className={ classes.buttonLabel }>Add Your Network</Typography>
-              </Button>
               <div className={ classes.socials }>
                 <a className={ `${classes.socialButton}` } href='https://github.com/antonnell/networklist-org.git' target='_blank' rel="noopener noreferrer" >
                   <svg version="1.1" width="24" height="24" viewBox="0 0 24 24">

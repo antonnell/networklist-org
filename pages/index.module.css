@@ -93,11 +93,6 @@
   max-width: 320px;
 }
 
-.addNetworkButton {
-  margin-top: 50px !important;
-  width: fit-content;
-}
-
 .filterRow {
   display: flex;
   align-items: center;
