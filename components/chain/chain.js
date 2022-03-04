@@ -61,16 +61,21 @@ export default function Chain({ chain }) {
 
     window.web3.eth.getAccounts((error, accounts) => {
       window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [params, accounts[0]],
+        method: 'wallet_switchEthereumChain',
+        params: [{ chainId: params.chainId }],
+      }).catch((error) => {
+        window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [params, accounts[0]],
+        })
+        .then((result) => {
+          console.log(result)
+        })
+        .catch((error) => {
+          stores.emitter.emit(ERROR, error.message ? error.message : error)
+          console.log(error)
+        });
       })
-      .then((result) => {
-        console.log(result)
-      })
-      .catch((error) => {
-        stores.emitter.emit(ERROR, error.message ? error.message : error)
-        console.log(error)
-      });
     })
   }
 
