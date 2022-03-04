@@ -9,6 +9,9 @@ import classes from './chain.module.css'
 import stores from '../../stores/index.js'
 import { getProvider } from '../../utils'
 
+import Icon from './icon'
+import useEthereumListsIcon from './useEthereumListsIcon';
+
 import {
   ERROR,
   CONNECT_WALLET,
@@ -20,6 +23,7 @@ export default function Chain({ chain }) {
   const router = useRouter()
 
   const [ account, setAccount ] = useState(null)
+  const { url: iconUrl } = useEthereumListsIcon(chain.icon)
 
   useEffect(() => {
     const accountConfigure = () => {
@@ -96,8 +100,8 @@ export default function Chain({ chain }) {
   return (
     <Paper elevation={ 1 } className={ classes.chainContainer } key={ chain.chainId }>
       <div className={ classes.chainNameContainer }>
-        <img
-          src='/connectors/icn-asd.svg'
+        <Icon
+          src={iconUrl ? iconUrl : '/connectors/icn-asd.svg'}
           onError={e => {
             e.target.onerror = null;
             e.target.src = "/chains/unknown-logo.png";
