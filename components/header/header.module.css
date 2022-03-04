@@ -12,6 +12,23 @@
   width: 250px;
 }
 
+.account {
+  display: flex;
+  align-items: center;
+}
+
+.account > img {
+  height: 25px;
+  width: 25px;
+  margin-right: 8px;
+  border-radius: 100px;
+}
+
+.ensName {
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
 .accountIcon {
   width: 30px;
   height: 30px;
@@ -20,22 +37,22 @@
 }
 
 .metamask {
-  background-image: url('/connectors/icn-metamask.svg');
+  background-image: url("/connectors/icn-metamask.svg");
 }
 .imtoken {
-  background-image: url('/connectors/icn-imtoken.svg');
+  background-image: url("/connectors/icn-imtoken.svg");
 }
 .ledger {
-  background-image: url('/connectors/icn-ledger.svg');
+  background-image: url("/connectors/icn-ledger.svg");
 }
 .coinbase {
-  background-image: url('/connectors/coinbaseWalletIcon.svg');
+  background-image: url("/connectors/coinbaseWalletIcon.svg");
 }
 .torus {
-  background-image: url('/connectors/torus.jpg');
+  background-image: url("/connectors/torus.jpg");
 }
 .trust {
-  background-image: url('/connectors/trustWallet.png');
+  background-image: url("/connectors/trustWallet.png");
 }
 
 .themeSelectContainer {
