@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Typography, Paper, Grid, Button, Tooltip } from '@material-ui/core'
+import React, {useState, useEffect, useMemo, useCallback} from 'react';
+import { Typography, Paper, Grid, Button, Tooltip, IconButton } from '@material-ui/core'
 import Skeleton from '@material-ui/lab/Skeleton';
 import { useRouter } from 'next/router'
 import Web3 from 'web3';
+import FileCopyIcon from '@material-ui/icons/FileCopy';
 
 import classes from './chain.module.css'
 
@@ -13,7 +14,8 @@ import {
   ERROR,
   CONNECT_WALLET,
   TRY_CONNECT_WALLET,
-  ACCOUNT_CONFIGURED
+  ACCOUNT_CONFIGURED,
+  PARAMS_COPIED
 } from '../../stores/constants'
 
 export default function Chain({ chain }) {
@@ -41,22 +43,31 @@ export default function Chain({ chain }) {
     return '0x'+num.toString(16)
   }
 
+  const params = useMemo(() => {
+    return (
+        {
+          chainId: toHex(chain.chainId), // A 0x-prefixed hexadecimal string
+          chainName: chain.name,
+          nativeCurrency: {
+            name: chain.nativeCurrency.name,
+            symbol: chain.nativeCurrency.symbol, // 2-6 characters long
+            decimals: chain.nativeCurrency.decimals,
+          },
+          rpcUrls: chain.rpc,
+          blockExplorerUrls: [ ((chain.explorers && chain.explorers.length > 0 && chain.explorers[0].url) ? chain.explorers[0].url : chain.infoURL) ]
+        }
+    )
+  }, [chain.chainId])
+
+  const copyParamsObject = useCallback(async () => {
+      await navigator.clipboard.writeText(JSON.stringify(params));
+      stores.emitter.emit(PARAMS_COPIED, 'Copied to clipboard!')
+  }, [chain.chainId]);
+
   const addToNetwork = () => {
     if(!(account && account.address)) {
       stores.dispatcher.dispatch({ type: TRY_CONNECT_WALLET })
       return
-    }
-
-    const params = {
-      chainId: toHex(chain.chainId), // A 0x-prefixed hexadecimal string
-      chainName: chain.name,
-      nativeCurrency: {
-        name: chain.nativeCurrency.name,
-        symbol: chain.nativeCurrency.symbol, // 2-6 characters long
-        decimals: chain.nativeCurrency.decimals,
-      },
-      rpcUrls: chain.rpc,
-      blockExplorerUrls: [ ((chain.explorers && chain.explorers.length > 0 && chain.explorers[0].url) ? chain.explorers[0].url : chain.infoURL) ]
     }
 
     window.web3.eth.getAccounts((error, accounts) => {
@@ -132,6 +143,11 @@ export default function Chain({ chain }) {
         >
           { renderProviderText() }
         </Button>
+        <Tooltip title={'Copy params object'}>
+          <IconButton aria-label="Copy params object" onClick={copyParamsObject} color={'primary'}>
+            <FileCopyIcon />
+          </IconButton>
+        </Tooltip>
       </div>
     </Paper>
   )
