@@ -207,8 +207,8 @@ function MyComponent(props) {
         let display = name;
         let descriptor = ''
         if (name === 'MetaMask') {
-          url = '/connectors/icn-metamask.svg'
-          descriptor= 'Connect to your MetaMask wallet'
+          url = '/connectors/icn-eidoo.svg'
+          descriptor= 'Connect to your Eidoo wallet'
         } else if (name === 'WalletConnect') {
           url = '/connectors/walletConnectIcon.svg'
           descriptor= 'Scan with WalletConnect to connect'

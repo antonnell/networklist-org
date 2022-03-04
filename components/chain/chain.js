@@ -78,7 +78,7 @@ export default function Chain({ chain }) {
 
     if(account && account.address) {
       const providerTextList = {
-        Metamask: 'Add to Metamask',
+        Metamask: 'Add to Eidoo',
         imToken: 'Add to imToken',
         Wallet: 'Add to Wallet'
       }
