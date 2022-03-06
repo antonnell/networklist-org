@@ -15,7 +15,7 @@ import {
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Chain from '../components/chain'
-import MultiChain from '../components/multichain'
+// import MultiChain from '../components/multichain'
 import Header from '../components/header'
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -85,7 +85,7 @@ function Home({ changeTheme, theme }) {
 
   const [ layout, setLayout ] = useState('grid')
   const [ search, setSearch ] = useState('')
-  const [ hideMultichain, setHideMultichain ] = useState('1')
+  // const [ hideMultichain, setHideMultichain ] = useState('1')
   const router = useRouter()
   if (router.query.search) {
     setSearch(router.query.search)
@@ -107,18 +107,18 @@ function Home({ changeTheme, theme }) {
     window.open('https://github.com/ethereum-lists/chains', '_blank')
   }
 
-  const closeMultichain = (perma) => {
-    setHideMultichain('1')
-    localStorage.setItem('chainlist.org-hideMultichain', perma ? '1' : '0')
-  }
+  // const closeMultichain = (perma) => {
+  //  setHideMultichain('1')
+  //  localStorage.setItem('chainlist.org-hideMultichain', perma ? '1' : '0')
+  // }
 
   useEffect(() => {
-    const multi = localStorage.getItem('chainlist.org-hideMultichain')
-    if(multi) {
-      setHideMultichain(multi)
-    } else {
-      setHideMultichain('0')
-    }
+    // const multi = localStorage.getItem('chainlist.org-hideMultichain')
+    // if(multi) {
+    //   setHideMultichain(multi)
+    // } else {
+    //   setHideMultichain('0')
+    // }
   }, [])
 
   return (
