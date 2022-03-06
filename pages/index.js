@@ -210,25 +210,3 @@ function Home({ changeTheme, theme }) {
 }
 
 export default withTheme(Home)
-
-// export const getStaticProps  = async () => {
-//
-//   try {
-//     const chainsResponse = await fetch('https://chainid.network/chains.json')
-//     const chainsJson = await chainsResponse.json()
-//
-//     return {
-//       props: {
-//         chains: chainsJson
-//       },
-//       revalidate: 60,
-//     }
-//   } catch (ex) {
-//     return {
-//       props: {
-//         chains: []
-//       }
-//     }
-//   }
-//
-// }
