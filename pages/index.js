@@ -152,7 +152,7 @@ function Home({ changeTheme, theme }) {
                   </svg>
                   <Typography variant='body1' className={ classes.sourceCode }>View Source Code</Typography>
                 </a>
-                <Typography variant='subtitle1' className={ classes.version }>Original project by Chainlist</Typography>
+                <Typography variant='subtitle1' className={ classes.version }>Original project by @antonnell</Typography>
               </div>
               <div className={classes.socials}>
                 <a className={`${classes.socialButton}`} href='https://twitter.com/dbarobin' target='_blank' rel="noopener noreferrer" >
