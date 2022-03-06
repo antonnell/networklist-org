@@ -8,12 +8,12 @@ export default function shutdownNotice({ close }) {
     <Dialog fullScreen open={ true } onClose={close} >
       <div className={ classes.dialogContainer }>
         <div className={classes.warningContainer}>
-          <PowerSettingsNewIcon className={ classes.warningIcon } />
+          <PowerSettingsNewIcon className={ classes.InfoIcon } />
           <Typography className={classes.para2} align='center'>
-            This service will no longer be available from 03 April 2022.
+            This new service is forked from the original repo.
           </Typography>
           <Typography className={classes.para2} align='center'>
-            The source code is open source, anyone that would like to continue hosting this service is welcome to.
+            Hosted at chainlist.fyi.
           </Typography>
           <div className={ classes.buttonsContainer }>
             <Button
