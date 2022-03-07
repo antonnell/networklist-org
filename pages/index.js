@@ -88,7 +88,7 @@ function Home({ changeTheme, theme }) {
       chain: "QUM",
       chainId: 83927,
       rpc: [
-        "http://104.197.245.214:8545",
+        "https://quorum.mixin.zone/",
       ],
       nativeCurrency: {
         name: "Quorum",
