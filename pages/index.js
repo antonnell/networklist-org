@@ -88,7 +88,7 @@ function Home({ changeTheme, theme }) {
       </Head>
 
       <main className={styles.main}>
-        <div className={ theme.palette.type === 'dark' ? classes.containerDark : classes.container }>
+        <div className={`${classes.container} ${theme.palette.type === 'dark' ? classes.containerDark : ''}`.trim()}>
           <div className={ theme.palette.type === 'dark' ? classes.listContainerDark : classes.listContainer }>
             <div className={ theme.palette.type === 'dark' ? classes.headerContainerDark : classes.headerContainer }>
               <div className={ classes.filterRow }>

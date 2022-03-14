@@ -5,10 +5,7 @@
 }
 
 .containerDark {
-  position: relative;
-  box-sizing: border-box;
-  width: 1152px;
-  background: #2b2e3c;
+  background: #121212;
 }
 
 .headerContainer {

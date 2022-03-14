@@ -51,7 +51,7 @@
   flex: 1;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1023px) {
   .headerContainer {
     width: 100%;
     display: flex;
@@ -60,5 +60,8 @@
   }
   .accountButton {
     width: 100%;
+  }
+  .themeSelectContainer {
+    margin-left: 0 !important;
   }
 }
