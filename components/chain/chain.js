@@ -19,7 +19,7 @@ import {
 export default function Chain({ chain }) {
   const router = useRouter()
 
-  const [ account, setAccount ] = useState(null)
+  const [account, setAccount] = useState(null)
 
   useEffect(() => {
     const accountConfigure = () => {
@@ -38,13 +38,20 @@ export default function Chain({ chain }) {
   }, [])
 
   const toHex = (num) => {
-    return '0x'+num.toString(16)
+    return '0x' + num.toString(16)
   }
 
   const addToNetwork = () => {
-    if(!(account && account.address)) {
+
+    if (isSupportedChain(chain)) {
+      redirectToOmniaDashboard();
+      return;
+    }
+
+
+    if (!(account && account.address)) {
       stores.dispatcher.dispatch({ type: TRY_CONNECT_WALLET })
-      return
+      return;
     }
 
     const params = {
@@ -56,7 +63,7 @@ export default function Chain({ chain }) {
         decimals: chain.nativeCurrency.decimals,
       },
       rpcUrls: chain.rpc,
-      blockExplorerUrls: [ ((chain.explorers && chain.explorers.length > 0 && chain.explorers[0].url) ? chain.explorers[0].url : chain.infoURL) ]
+      blockExplorerUrls: [((chain.explorers && chain.explorers.length > 0 && chain.explorers[0].url) ? chain.explorers[0].url : chain.infoURL)]
     }
 
     window.web3.eth.getAccounts((error, accounts) => {
@@ -64,19 +71,41 @@ export default function Chain({ chain }) {
         method: 'wallet_addEthereumChain',
         params: [params, accounts[0]],
       })
-      .then((result) => {
-        console.log(result)
-      })
-      .catch((error) => {
-        stores.emitter.emit(ERROR, error.message ? error.message : error)
-        console.log(error)
-      });
+        .then((result) => {
+          console.log(result)
+        })
+        .catch((error) => {
+          stores.emitter.emit(ERROR, error.message ? error.message : error)
+          console.log(error)
+        });
     })
   }
 
-  const renderProviderText = () => {
+  const redirectToOmniaDashboard = () => {
+    window.open('https://app.omniatech.io', "_blank")
+  }
 
-    if(account && account.address) {
+  const isSupportedChain = (blockchain) => {
+    switch (blockchain.chain) {
+      case 'ETH':
+        return true;
+      case 'BTC':
+        return true;
+      case 'Polygon':
+        return true;
+      case 'AVAX':
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  const renderProviderText = () => {
+    if (isSupportedChain(chain)) {
+      return 'Generate endpoints'
+    }
+
+    if (account && account.address) {
       const providerTextList = {
         Metamask: 'Add to Metamask',
         imToken: 'Add to imToken',
@@ -89,48 +118,48 @@ export default function Chain({ chain }) {
 
   }
 
-  if(!chain) {
+  if (!chain) {
     return <div></div>
   }
 
   return (
-    <Paper elevation={ 1 } className={ classes.chainContainer } key={ chain.chainId }>
-      <div className={ classes.chainNameContainer }>
+    <Paper elevation={1} className={classes.chainContainer} key={chain.chainId}>
+      <div className={classes.chainNameContainer}>
         <img
           src='/connectors/icn-asd.svg'
           onError={e => {
             e.target.onerror = null;
             e.target.src = "/chains/unknown-logo.png";
           }}
-          width={ 28 }
-          height={ 28 }
-          className={ classes.avatar }
+          width={28}
+          height={28}
+          className={classes.avatar}
         />
-        <Tooltip title={ chain.name }>
-          <Typography variant='h3' className={ classes.name } noWrap>
-            <a href={ chain.infoURL } target="_blank" rel="noreferrer">
-              { chain.name }
+        <Tooltip title={chain.name}>
+          <Typography variant='h3' className={classes.name} noWrap>
+            <a href={chain.infoURL} target="_blank" rel="noreferrer">
+              {chain.name}
             </a>
           </Typography>
         </Tooltip>
       </div>
-      <div className={ classes.chainInfoContainer }>
-        <div className={ classes.dataPoint }>
-          <Typography variant='subtitle1' color='textSecondary' className={ classes.dataPointHeader} >ChainID</Typography>
-          <Typography variant='h5'>{ chain.chainId }</Typography>
+      <div className={classes.chainInfoContainer}>
+        <div className={classes.dataPoint}>
+          <Typography variant='subtitle1' color='textSecondary' className={classes.dataPointHeader} >ChainID</Typography>
+          <Typography variant='h5'>{chain.chainId}</Typography>
         </div>
-        <div className={ classes.dataPoint }>
-          <Typography variant='subtitle1' color='textSecondary' className={ classes.dataPointHeader}>Currency</Typography>
-          <Typography variant='h5'>{ chain.nativeCurrency ? chain.nativeCurrency.symbol : 'none' }</Typography>
+        <div className={classes.dataPoint}>
+          <Typography variant='subtitle1' color='textSecondary' className={classes.dataPointHeader}>Currency</Typography>
+          <Typography variant='h5'>{chain.nativeCurrency ? chain.nativeCurrency.symbol : 'none'}</Typography>
         </div>
       </div>
-      <div className={ classes.addButton }>
+      <div className={classes.addButton}>
         <Button
           variant='outlined'
           color='primary'
-          onClick={ addToNetwork }
+          onClick={addToNetwork}
         >
-          { renderProviderText() }
+          {renderProviderText()}
         </Button>
       </div>
     </Paper>
