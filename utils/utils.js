@@ -1,4 +1,4 @@
-import BigNumber from 'bignumber.js'
+import BigNumber from "bignumber.js";
 
 // todo: get navigator declared somehow? probably an issue with using nextjs
 // function getLang() {
@@ -15,33 +15,50 @@ export function formatCurrency(amount, decimals = 2) {
       maximumFractionDigits: decimals,
     });
 
-    return formatter.format(amount)
+    return formatter.format(amount);
   } else {
-    return 0
+    return 0;
   }
 }
 
-export function formatAddress(address, length = 'short') {
-  if (address && length === 'short') {
-    address = address.substring(0, 6) + '...' + address.substring(address.length - 4, address.length)
-    return address
-  } else if (address && length === 'long') {
-    address = address.substring(0, 12) + '...' + address.substring(address.length - 8, address.length)
-    return address
+export function formatAddress(address, length = "short") {
+  if (address && length === "short") {
+    address =
+      address.substring(0, 6) +
+      "..." +
+      address.substring(address.length - 4, address.length);
+    return address;
+  } else if (address && length === "long") {
+    address =
+      address.substring(0, 12) +
+      "..." +
+      address.substring(address.length - 8, address.length);
+    return address;
   } else {
-    return null
+    return null;
   }
 }
 
 export function bnDec(decimals) {
-  return new BigNumber(10)
-    .pow(parseInt(decimals))
+  return new BigNumber(10).pow(parseInt(decimals));
 }
 
 export function getProvider() {
   if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
-    if (window.ethereum.isMetaMask) return 'Metamask'
-    if (window.ethereum.isImToken) return 'imToken'
+    if (window.ethereum.isMetaMask) return "Metamask";
+    if (window.ethereum.isImToken) return "imToken";
   }
-  return 'Wallet'
+  return "Wallet";
+}
+
+export function isSupportedChain(blockchain) {
+  const supportedChainIds = [1, 3, 4, 5, 42, 56, 97, 43113, 43114, 137, 80001];
+
+  const isSupported = supportedChainIds.find((id) => id === blockchain.chainId);
+
+  if (isSupported) {
+    return true;
+  }
+
+  return false;
 }

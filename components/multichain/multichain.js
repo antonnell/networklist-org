@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Typography, Paper, Grid, Button, FormControlLabel, Checkbox } from '@material-ui/core'
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Web3 from 'web3';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
@@ -23,7 +23,7 @@ export default function Multichain({ closeMultichain }) {
     setChecked(!checked)
   }
 
-  const theme = createMuiTheme({
+  const theme = createTheme({
     palette: {
       type: 'dark',
       secondary: {

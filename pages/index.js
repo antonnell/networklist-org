@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
-import { withTheme, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { withTheme, createTheme, ThemeProvider } from '@material-ui/core/styles';
 import path from 'path'
 import {
   Grid,
@@ -26,7 +26,7 @@ import useSWR from 'swr'
 
 import classes from './index.module.css'
 
-const searchTheme = createMuiTheme({
+const searchTheme = createTheme({
   palette: {
     type: 'light',
     primary: {
