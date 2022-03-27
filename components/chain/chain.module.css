@@ -10,9 +10,6 @@
   justify-content: center;
 }
 
-.name {
-}
-
 .chainInfoContainer {
   display: flex;
   align-items: flex-start;
@@ -30,6 +27,7 @@
 
 .avatar {
   margin-right: 24px;
+  border-radius: 50%;
 }
 
 .chainNameContainer {
@@ -38,4 +36,12 @@
   justify-content: flex-start;
   width: 100%;
   margin-bottom: 12px !important;
+}
+
+.popover {
+  padding: 12px;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
