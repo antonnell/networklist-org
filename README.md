@@ -6,6 +6,31 @@ TokenPocket钱包现已支持通过配置即可完成添加支持**EVM,Polkadot,
 
 TokenPocket Chainlist is a list of EVM(ethereum)/Polkadot/EOSIO networks. Users can use the information to connect their wallets and Web3 middleware providers to the appropriate Chain ID and Network ID to connect to the correct chain.
 
+TokenPocket钱包开发团队一直致力于给社区提供更多具有潜力链给广大开发者和钱包用户，致力于提供更加友好方式支持新链，致力于提供完全去中心化钱包给用户，致力于赋能和携手具有潜力项目方共同推进web3发展。
+
+​      为了支持不同项目方新链发展，为了钱包用户使用上不同项目方新链。我们不留余力深入了解项目方新链技术特点、稳定性、可用性和安全性，深入了解钱包用户对web3世界不断繁荣新的创新项目的需求。我们以更加负责任和专业能力保证用户利用TokenPocket钱包连接web3世界去探索新的项目同时保证用户钱包资产安全。在TokenPocket钱添加区块链需要满足以下条件：
+
+- 区块链必须已经在主网上线，并且至少已经稳定运行3～6个月。
+- 链上热门代币和应用数量必须50+。
+- 区块链具有完整公开官方使用文档、开发者文档和开发者工具。
+- 项目必须提供API/JSON-RPC访问节点获取余额等、提供区块链浏览器。
+- 原生代币可在交易所进行交易。
+- 项目方开发者必须保证项目不断更新和发展。
+- 在链集成到TokenPocket后，如果该链使用上遇到意外、紧急问题，能够提供及时技术支持，以保证TokenPocket钱包用户权益不受损失。
+- 根据所需支持程度，捐赠TPT。
+
+|              | 简单支持                               | 完整支持                                                     |
+| ------------ | -------------------------------------- | ------------------------------------------------------------ |
+| 捐赠数量     | 2,000,000 TPT                          | 6,000,000TPT                                                 |
+| 支持公链种类 | EVM,Polkadot,EOSIO技术系链             | EVM,Polkadot,EOSIO技术系链                                   |
+| 支持程度     | 自定义网络、公链列表处默认显示该链logo | 在已支持链列表显示原生币和非原生币、Token价格、热门Token选择列表、交易记录和交易详情、独立的Dapp入口等信息 |
+
+**注意：**TokenPocket基金会收款地址为 **0x7837AE9E4FD6E967F1B8C8824D6288ECE6e730F9** （仅支持收取BSC、HECO以及ETH链上的TPT，请转账前再三确认！ ）
+
+  在收到项目方提交申请后，我们会第一时间深入交流、了解和评估区块链项目信息。
+
+
+
 ## How to add a new chain
 
 Fork this repo and add your evm/polkadot/eosio chain info into `chains.json` 
