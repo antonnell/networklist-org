@@ -98,7 +98,12 @@ Example:
             "name": "xDAIscan", 
             "icon": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png", 
             "addr": "https://xxx2can.io/"
-        }]
+        }],
+        "projectContactInfo": {
+    	    "officialWebsite": "https://xxx.network.com",
+    	    "phone": "02x-223xxx12",
+    	    "email": "xxx.xxx@xxx.com",
+        }  
     }
 }
 ```
@@ -244,7 +249,12 @@ fork 这个 repo(仓库)并将你的 evm/polkadot/eosio 链信息添加到 `chai
             "name": "xDAIscan", 
             "icon": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png", 
             "addr": "https://xxx2can.io/"
-        }]
+        }],
+        "projectContactInfo": {
+    	    "officialWebsite": "https://xxx.network.com",
+    	    "phone": "02x-223xxx12",
+    	    "email": "xxx.xxx@xxx.com",
+        }
     }
 }
 ```
