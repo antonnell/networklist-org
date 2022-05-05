@@ -23,8 +23,8 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     if(!router.isReady) return
 
-    if(router.query?.style) {
-      changeTheme(router.query?.style === 'dark')
+    if(router.query?.theme) {
+      changeTheme(router.query?.theme === 'dark')
     }
   }, [router])
 
