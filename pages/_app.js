@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { useRouter } from 'next/router'
 
 import SnackbarController from '../components/snackbar'
 
@@ -17,6 +18,15 @@ import darkTheme from '../theme/dark';
 
 function MyApp({ Component, pageProps }) {
   const [ themeConfig, setThemeConfig ] = useState(lightTheme);
+  const router = useRouter()
+
+  useEffect(() => {
+    if(!router.isReady) return
+
+    if(router.query?.style) {
+      changeTheme(router.query?.style === 'dark')
+    }
+  }, [router])
 
   const changeTheme = (dark) => {
     setThemeConfig(dark ? darkTheme : lightTheme)
