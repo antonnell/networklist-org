@@ -39,7 +39,7 @@
     "infoURL": "https://optimism.io"
   },
   {
-    "name": "xDAI Chain",
+    "name": "Gnosis Chain (xDai Chain)",
     "chainId": 100,
     "shortName": "xdai",
     "chain": "XDAI",
@@ -60,7 +60,7 @@
       "ws://xdai.poanetwork.dev:8546"
     ],
     "faucets": [],
-    "infoURL": "https://forum.poa.network/c/xdai-chain"
+    "infoURL": "https://forum.poa.network/c/gnosis-chain"
   },
   {
     "name": "Klaytn Testnet Baobab",
