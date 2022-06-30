@@ -182,14 +182,7 @@
       "symbol": "CLV",
       "decimals": 18
     },
-    "rpc": ["https://rpc-ivy.clover.finance","https://rpc-ivy-2.clover.finance","https://rpc-ivy-3.clover.finance"],
-    "explorers": [
-      {
-        "name": "Clover Mainnet Explorer",
-        "url": "https://clvscan.com",
-        "standard": "none"
-      }
-    ],
+    "rpc": [],
     "faucets": [],
     "infoURL": "https://clover.finance"
   },
@@ -1519,14 +1512,7 @@
       "symbol": "PRING",
       "decimals": 9
     },
-    "rpc": ["https://pangolin-rpc.darwinia.network"],
-    "explorers": [
-      {
-        "name": "Pangolin Explorer",
-        "url": "https://pangolin.subscan.io",
-        "standard": "none"
-      }
-    ],
+    "rpc": [],
     "faucets": [],
     "infoURL": "https://darwinia.network/"
   },
