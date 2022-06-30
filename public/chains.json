@@ -255,7 +255,14 @@
       "symbol": "MATH",
       "decimals": 18
     },
-    "rpc": [],
+    "rpc": ["https://mathchain-us.maiziqianbao.net/rpc","https://mathchain-asia.maiziqianbao.net/rpc"],
+    "explorers": [
+      {
+        "name": "MathChain Explorer",
+        "url": "https://explorer.mathchain.org",
+        "standard": "none"
+      }
+    ],
     "faucets": [],
     "infoURL": "https://mathwallet.org"
   },
@@ -342,8 +349,15 @@
       "symbol": "GLMR",
       "decimals": 18
     },
-    "rpc": [],
+    "rpc": ["https://rpc.api.moonbeam.network","https://moonbeam.public.blastapi.io","https://rpc.ankr.com/moonbeam"],
     "faucets": [],
+    "explorers": [
+      {
+        "name": "Moonbeam Explorer",
+        "url": "https://moonscan.io",
+        "standard": "none"
+      }
+    ],
     "infoURL": "https://moonbeam.network/networks/moonbeam/"
   },
   {
@@ -358,7 +372,15 @@
       "symbol": "RIVER",
       "decimals": 18
     },
-    "rpc": [],
+    "rpc": ["https://rpc.api.moonriver.moonbeam.network","https://moonriver.public.blastapi.io"],
+    "explorers": [
+      {
+        "name": "Moonriver Explorer",
+        "url": "https://moonriver.moonscan.io",
+        "standard": "none"
+      }
+    ],
+
     "faucets": [],
     "infoURL": "https://moonbeam.network/networks/moonriver/"
   },
@@ -941,7 +963,7 @@
       "symbol": "420",
       "decimals": 18
     },
-    "rpc": [],
+    "rpc": ["https://api.roninchain.com/rpc"],
     "faucets": [],
     "infoURL": "https://420integrated.com"
   },
