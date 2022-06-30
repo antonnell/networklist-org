@@ -342,8 +342,15 @@
       "symbol": "GLMR",
       "decimals": 18
     },
-    "rpc": [],
+    "rpc": ["https://rpc.api.moonbeam.network"],
     "faucets": [],
+    "explorers": [
+      {
+        "name": "Moonbeam Explorer",
+        "url": "https://moonscan.io/",
+        "standard": "none"
+      }
+    ],
     "infoURL": "https://moonbeam.network/networks/moonbeam/"
   },
   {
