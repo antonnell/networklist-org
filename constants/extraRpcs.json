@@ -1482,5 +1482,10 @@
         "rpcs": [
             "https://mainnet-rpc.tlxscan.com"
         ]
+    },
+    "14888": {
+        "rpcs": [
+            "https://e1suvyew3z:Cb71YSHEO6CPsAxddoJFJJfOBhR9dw7H40glPadAXWA@e1cizhxpw9-e1ezx6f5ym-rpc.eu1-azure.kaleido.io"
+        ]
     }
 }
