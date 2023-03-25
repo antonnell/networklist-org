@@ -15,7 +15,7 @@ import {
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Chain from '../components/chain'
-import MultiChain from '../components/multichain'
+// import MultiChain from '../components/multichain'
 import Header from '../components/header'
 
 import SearchIcon from '@material-ui/icons/Search';
@@ -85,7 +85,7 @@ function Home({ changeTheme, theme }) {
 
   const [ layout, setLayout ] = useState('grid')
   const [ search, setSearch ] = useState('')
-  const [ hideMultichain, setHideMultichain ] = useState('1')
+  // const [ hideMultichain, setHideMultichain ] = useState('1')
   const router = useRouter()
   if (router.query.search) {
     setSearch(router.query.search)
@@ -107,18 +107,18 @@ function Home({ changeTheme, theme }) {
     window.open('https://github.com/ethereum-lists/chains', '_blank')
   }
 
-  const closeMultichain = (perma) => {
-    setHideMultichain('1')
-    localStorage.setItem('chainlist.org-hideMultichain', perma ? '1' : '0')
-  }
+  // const closeMultichain = (perma) => {
+  //  setHideMultichain('1')
+  //  localStorage.setItem('chainlist.org-hideMultichain', perma ? '1' : '0')
+  // }
 
   useEffect(() => {
-    const multi = localStorage.getItem('chainlist.org-hideMultichain')
-    if(multi) {
-      setHideMultichain(multi)
-    } else {
-      setHideMultichain('0')
-    }
+    // const multi = localStorage.getItem('chainlist.org-hideMultichain')
+    // if(multi) {
+    //   setHideMultichain(multi)
+    // } else {
+    //   setHideMultichain('0')
+    // }
   }, [])
 
   return (
@@ -146,13 +146,21 @@ function Home({ changeTheme, theme }) {
                 <Typography className={ classes.buttonLabel }>Add Your Network</Typography>
               </Button>
               <div className={ classes.socials }>
-                <a className={ `${classes.socialButton}` } href='https://github.com/antonnell/networklist-org.git' target='_blank' rel="noopener noreferrer" >
+                <a className={ `${classes.socialButton}` } href='https://github.com/dbarobin/networklist-org.git' target='_blank' rel="noopener noreferrer" >
                   <svg version="1.1" width="24" height="24" viewBox="0 0 24 24">
                     <path fill={ '#2F80ED' } d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
                   </svg>
                   <Typography variant='body1' className={ classes.sourceCode }>View Source Code</Typography>
                 </a>
-                <Typography variant='subtitle1' className={ classes.version }>Version 1.0.7</Typography>
+                <Typography variant='subtitle1' className={ classes.version }>Original project by @antonnell</Typography>
+              </div>
+              <div className={classes.socials}>
+                <a className={`${classes.socialButton}`} href='https://twitter.com/dbarobin' target='_blank' rel="noopener noreferrer" >
+                  <svg version="1.1" width="20" height="20" viewBox="0 0 24 24">
+                    <path fill="#00ACEE" d="M.5 18.7c10 6.2 22.7-.7 22.5-13 1-.7 1.9-1.6 2.6-2.7-1 .5-2 .8-3.1.9 1.14-.7 2-1.7 2.4-2.9-1 .6-2 1-3.3 1.3-4.3-4.13-10 .3-8.8 4.7-4.3-.2-8-2.3-10.6-5.4C1 4 1.5 7.1 3.9 8.5 3 8.4 2 8.2 1.5 7.8c0 2.6 1.8 4.6 4.1 5.1-.8.2-1.5.3-2.3.1.6 2 2.6 3.6 4.8 3.6-2 1.6-4.7 2.4-7.6 2.1z" />
+                  </svg>
+                  <Typography variant='body1' className={classes.sourceCode}>Follow me on Twitter</Typography>
+                </a>
               </div>
             </div>
           </div>
@@ -185,7 +193,6 @@ function Home({ changeTheme, theme }) {
               <Header changeTheme={ changeTheme } />
             </div>
             <div className={ classes.cardsContainer }>
-              { hideMultichain === '0' && <MultiChain closeMultichain={ closeMultichain } /> }
               {
                 data && data.filter((chain) => {
                   if(search === '') {
