@@ -221,5 +221,56 @@
         "standard": "EIP3091"
       }
     ]
+  },
+  {
+    "name": "Greenfield BSC Testnet",
+    "chain": "BSC",
+    "rpc": [
+      "https://gnfd-bsc-testnet-dataseed1.bnbchain.org",
+      "https://gnfd-bsc-testnet-dataseed2.bnbchain.org",
+      "https://greenfield-bsc-testnet-ap.nodereal.io",
+      "https://greenfield-bsc-testnet-us.nodereal.io"
+    ],
+    "faucets": [
+      "https://gnfd-bsc-faucet.bnbchain.org/"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Chain Native Token",
+      "symbol": "tBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://bnbchain.org/en/greenfield",
+    "chainId": 5601,
+    "explorers": [
+      {
+        "name": "Greenfield BSC Testnet Blockchain Explorer",
+        "url": "https://greenfield-bsc-testnet-explorer.nodereal.io/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Greenfield Blockchain Testnet",
+    "chain": "GNFD",
+    "rpc": [
+      "https://gnfd-testnet-ethapi-us.bnbchain.org"
+    ],
+    "faucets": [
+      "https://gnfd-bsc-faucet.bnbchain.org/"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Chain Native Token",
+      "symbol": "tBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://bnbchain.org/en/greenfield",
+    "chainId": 5600,
+    "explorers": [
+      {
+        "name": "Greenfield Testnet Blockchain Explorer",
+        "url": "https://greenfieldscan.com/",
+        "standard": "EIP3091"
+      }
+    ]
   }
 ]
