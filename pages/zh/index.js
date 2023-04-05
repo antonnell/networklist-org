@@ -1,17 +1,25 @@
 import * as React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Layout from "../components/Layout";
-import Chain from "../components/chain";
-import { generateChainData } from "../utils/fetch";
+import Layout from "../../components/Layout";
+import Chain from "../../components/chain";
+import { fetcher, populateChain } from "../../utils/fetch";
 
 export async function getStaticProps() {
-  const sortedChains = await generateChainData()
+  const chains = await fetcher("https://chainid.network/chains.json");
+  const chainTvls = await fetcher("https://api.llama.fi/chains");
+
+  const sortedChains = chains
+    .filter((c) => c.name !== "420coin") // same chainId as ronin
+    .map((chain) => populateChain(chain, chainTvls))
+    .sort((a, b) => {
+      return (b.tvl ?? 0) - (a.tvl ?? 0);
+    });
 
   return {
     props: {
       chains: sortedChains,
-      // messages: (await import(`../translations/${locale}.json`)).default,
+      // messages: (await import(`../../translations/${locale}.json`)).default,
     },
     revalidate: 3600,
   };
@@ -62,11 +70,11 @@ function Home({ chains }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
+      <Layout lang="zh">
         <React.Suspense fallback={<div className="h-screen"></div>}>
-          <div className="dark:text-[#B3B3B3] text-black grid gap-5 grid-cols-1 place-content-between pb-4 sm:pb-10 sm:grid-cols-[repeat(auto-fit,_calc(50%_-_15px))] 3xl:grid-cols-[repeat(auto-fit,_calc(33%_-_20px))] isolate grid-flow-dense">
+          <div className="grid gap-5 grid-cols-1 place-content-between pb-4 sm:pb-10 sm:grid-cols-[repeat(auto-fit,_calc(50%_-_15px))] 3xl:grid-cols-[repeat(auto-fit,_calc(33%_-_20px))] isolate grid-flow-dense">
             {filteredChains.map((chain, idx) => (
-              <Chain chain={chain} key={idx} lang="en" />
+              <Chain chain={chain} key={idx} lang="zh" />
             ))}
           </div>
         </React.Suspense>
