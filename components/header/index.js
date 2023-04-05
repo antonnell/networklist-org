@@ -56,6 +56,13 @@ function Header({ lang, chainName }) {
 
   const { data: accountData } = useAccount();
 
+  const searchInputRef = React.useRef();
+
+  // focus the search input on mount
+  React.useEffect(() => {
+    searchInputRef.current.focus();
+  }, [])
+
   const address = accountData?.address ?? null;
 
   return (
@@ -66,6 +73,7 @@ function Header({ lang, chainName }) {
             <label className="flex sm:items-center flex-col sm:flex-row focus-within:ring-2 dark:ring-[#2F80ED] ring-[#2F80ED] rounded-t-[10px]">
               <span className="font-bold text-sm dark:text-[#B3B3B3] text-black whitespace-nowrap px-3 pt-4 sm:pt-0">{t("search-networks")}</span>
               <input
+                ref={searchInputRef}
                 placeholder="ETH, Fantom, ..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
