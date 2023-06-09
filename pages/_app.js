@@ -1,55 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import * as React from "react";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+// import { NextIntlProvider } from "next-intl";
+import { useAnalytics } from "../hooks/useAnalytics";
+import "../styles/globals.css";
 
-import SnackbarController from '../components/snackbar'
-import ShutdownNotice from '../components/shutdownNotice'
+function App({ Component, pageProps }) {
+  useAnalytics();
 
-import stores from '../stores/index.js'
-
-import {
-  CONFIGURE,
-} from '../stores/constants'
-
-import '../styles/globals.css'
-
-import lightTheme from '../theme/light';
-import darkTheme from '../theme/dark';
-
-function MyApp({ Component, pageProps }) {
-  const [ themeConfig, setThemeConfig ] = useState(lightTheme);
-
-  const changeTheme = (dark) => {
-    setThemeConfig(dark ? darkTheme : lightTheme)
-    localStorage.setItem("yearn.finance-dark-mode", dark ? "dark" : "light");
-  }
-
-  useEffect(function() {
-    const localStorageDarkMode = window.localStorage.getItem(
-      "yearn.finance-dark-mode"
-    );
-    changeTheme(localStorageDarkMode ? localStorageDarkMode === "dark" : false);
-  }, []);
-
-  useEffect(function() {
-    stores.dispatcher.dispatch({ type: CONFIGURE })
-  },[]);
-
-  const [shutdownNoticeOpen, setShutdownNoticeOpen] = useState(true);
-  const closeShutdown = () => {
-    setShutdownNoticeOpen(false)
-  }
+  const [queryClient] = React.useState(() => new QueryClient());
 
   return (
-    <ThemeProvider theme={ themeConfig }>
-      <CssBaseline />
-      <Component {...pageProps} changeTheme={ changeTheme } />
-      <SnackbarController />
-      { shutdownNoticeOpen &&
-        <ShutdownNotice close={ closeShutdown } />
-      }
-    </ThemeProvider>
-  )
+    <QueryClientProvider client={queryClient}>
+      {/* <NextIntlProvider messages={pageProps.messages}> */}
+      <Component {...pageProps} />
+      {/* <SnackbarController /> */}
+      {/* </NextIntlProvider> */}
+    </QueryClientProvider>
+  );
 }
 
-export default MyApp
+export default App;
