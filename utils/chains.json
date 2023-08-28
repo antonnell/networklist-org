@@ -1,0 +1,276 @@
+[
+  {
+    "name": "BNB Smart Chain Mainnet",
+    "chain": "BSC",
+    "rpc": [
+      "https://bsc.nodereal.io",
+      "https://bsc-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3",
+      "https://bsc-dataseed.binance.org/",
+      "https://bsc-dataseed1.defibit.io/",
+      "https://bsc-dataseed1.ninicoin.io/"
+    ],
+    "faucets": [
+      "https://free-online-app.com/faucet-for-eth-evm-chains/"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Smart Chain Native Token",
+      "symbol": "BNB",
+      "decimals": 18
+    },
+    "infoURL": "https://www.bnbchain.world",
+    "chainId": 56,
+    "slip44": 714,
+    "explorers": [
+      {
+        "name": "bscscan",
+        "url": "https://bscscan.com",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "BNB Smart Chain Testnet",
+    "chain": "BSC",
+    "rpc": [
+      "https://data-seed-prebsc-1-s1.binance.org:8545/",
+      "https://data-seed-prebsc-1-s2.binance.org:8545/",
+      "https://data-seed-prebsc-2-s2.binance.org:8545/",
+      "https://data-seed-prebsc-2-s3.binance.org:8545/",
+      "https://bsc-testnet.nodereal.io/v1/e9a36765eb8a40b9bd12e680a1fd2bc5"
+    ],
+    "faucets": [
+      "https://testnet.binance.org/faucet-smart"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Smart Chain Native Token",
+      "symbol": "BNB",
+      "decimals": 18
+    },
+    "infoURL": "https://testnet.binance.org/",
+    "chainId": 97,
+    "explorers": [
+      {
+        "name": "bscscan-testnet",
+        "url": "https://testnet.bscscan.com",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "NodeReal-BSC Application Sidechain Testnet",
+    "chain": "BAS-ARS",
+    "rpc": [
+      "https://bas-aries-public.nodereal.io/"
+    ],
+    "faucets": [
+      "https://bas-aries-faucet.nodereal.io/"
+    ],
+    "nativeCurrency": {
+      "name": "Nodereal-BSC Application Sidechain Native Token",
+      "symbol": "ARS",
+      "decimals": 18
+    },
+    "infoURL": "https://docs.nodereal.io/nodereal/bas/introduce ",
+    "chainId": 117,
+    "explorers": [
+      {
+        "name": "bastrace",
+        "url": "https://bas-aries-testnet-explorer.nodereal.io/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Ankr-BSC Application Sidechain Testnet",
+    "chain": "BAS-ANKR",
+    "rpc": [
+      "https://rpc.dev-01.bas.ankr.com/"
+    ],
+    "faucets": [
+      "https://faucet.dev-01.bas.ankr.com/"
+    ],
+    "nativeCurrency": {
+      "name": "Ankr-BSC Application Sidechain Native Token",
+      "symbol": "BAS",
+      "decimals": 18
+    },
+    "infoURL": "https://docs.bnbchain.world/docs/learn/bas/",
+    "chainId": 14000,
+    "explorers": [
+      {
+        "name": "bastrace",
+        "url": "https://explorer.dev-01.bas.ankr.com/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Meta Apes BSC Application Sidechain Mainnet",
+    "chain": "BAS-MAPES",
+    "rpc": [
+      "https://bas.metaapesgame.com/bas_mainnet_full_rpc"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "BAS Meta Apes Native Token",
+      "symbol": "PEEL",
+      "decimals": 18
+    },
+    "infoURL": "https://docs.bnbchain.world/docs/learn/bas/",
+    "chainId": 16350,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://explorer.bas.metaapesgame.com/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "GAL-BSC application Sidechain Testnet",
+    "chain": "BAS-GAL",
+    "rpc": [
+      "https://bas-galaxy-testnet.nodereal.io/"
+    ],
+    "faucets": [
+      "https://bas-galaxy-testnet-faucet.nodereal.io/"
+    ],
+    "nativeCurrency": {
+      "name": "Project Galaxy",
+      "symbol": "GAL",
+      "decimals": 18
+    },
+    "infoURL": "https://docs.nodereal.io/nodereal/bas/introduce",
+    "chainId": 230,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://bas-galaxy-testnet-explorer.nodereal.io/",
+        "standard": "EIP-3091"
+      }
+    ]
+  },
+  {
+    "name": "FNCY Testnet",
+    "chain": "FNCY Testnet",
+    "rpc": [
+      "https://fncy-testnet-seed.fncy.world"
+    ],
+    "faucets": [
+      "https://faucet-testnet.fncy.world/"
+    ],
+    "nativeCurrency": {
+      "name": "FNCY",
+      "symbol": "FNCY",
+      "decimals": 18
+    },
+    "infoURL": "https://fncy.world/",
+    "chainId": 923018,
+    "explorers": [
+      {
+        "name": "FNCY testnet explorer",
+        "url": "https://fncyscan-testnet.fncy.world/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "FNCY Mainnet",
+    "chain": "FNCY",
+    "rpc": [
+      "https://fncy-seed1.fncy.world"
+    ],
+    "faucets": [
+      ""
+    ],
+    "nativeCurrency": {
+      "name": "FNCY",
+      "symbol": "FNCY",
+      "decimals": 18
+    },
+    "infoURL": "https://fncy.world/",
+    "chainId": 73,
+    "explorers": [
+      {
+        "name": "FNCY Blockchain Explorer",
+        "url": "https://fncyscan.fncy.world",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Combo Testnet",
+    "chain": "Combo",
+    "rpc": [
+      "https://test-rpc.combonetwork.io"
+    ],
+    "faucets": [
+      ""
+    ],
+    "nativeCurrency": {
+      "name": "Binance Chain Native Token",
+      "symbol": "tcBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://combonetwork.io",
+    "chainId": 91715,
+    "explorers": [
+      {
+        "name": "Combo Testnet Blockchain Explorer",
+        "url": "https://combotrace-testnet.nodereal.io/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Greenfield BSC Testnet",
+    "chain": "BSC",
+    "rpc": [
+      "https://gnfd-bsc-testnet-dataseed1.bnbchain.org",
+      "https://gnfd-bsc-testnet-dataseed2.bnbchain.org",
+      "https://greenfield-bsc-testnet-ap.nodereal.io",
+      "https://greenfield-bsc-testnet-us.nodereal.io"
+    ],
+    "faucets": [
+      "https://gnfd-bsc-faucet.bnbchain.org/"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Chain Native Token",
+      "symbol": "tBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://bnbchain.org/en/greenfield",
+    "chainId": 5601,
+    "explorers": [
+      {
+        "name": "Greenfield BSC Testnet Blockchain Explorer",
+        "url": "https://greenfield-bsc-testnet-explorer.nodereal.io/",
+        "standard": "EIP3091"
+      }
+    ]
+  },
+  {
+    "name": "Greenfield Blockchain Testnet",
+    "chain": "GNFD",
+    "rpc": [
+      "https://gnfd-testnet-ethapi-us.bnbchain.org"
+    ],
+    "faucets": [
+      "https://gnfd-bsc-faucet.bnbchain.org/"
+    ],
+    "nativeCurrency": {
+      "name": "BNB Chain Native Token",
+      "symbol": "tBNB",
+      "decimals": 18
+    },
+    "infoURL": "https://bnbchain.org/en/greenfield",
+    "chainId": 5600,
+    "explorers": [
+      {
+        "name": "Greenfield Testnet Blockchain Explorer",
+        "url": "https://greenfieldscan.com/",
+        "standard": "EIP3091"
+      }
+    ]
+  }
+]

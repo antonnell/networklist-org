@@ -1,8 +1,8 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import coreTheme from './coreTheme';
 
 // Create a theme instance.
-const theme = createMuiTheme({
+const theme = createTheme({
   ...coreTheme,
   palette: {
     ...coreTheme.palette,
@@ -11,7 +11,7 @@ const theme = createMuiTheme({
       paper: '#2B2E3C'
     },
     primary: {
-      main: '#2F80ED',
+      main: '#f0b90b',
     },
     type: 'dark',
   },
@@ -22,7 +22,7 @@ const theme = createMuiTheme({
       outlinedPrimary: {
         border: '1px solid #FFFFFF1A',
         "&:hover": {
-          backgroundColor: '#2F80ED !important',
+          backgroundColor: '#f0b90b !important',
           color: '#fff'
         }
       }

@@ -1,138 +1,105 @@
-import React, { useState, useEffect } from 'react';
-import { Typography, Paper, Grid, Button, Tooltip } from '@material-ui/core'
-import Skeleton from '@material-ui/lab/Skeleton';
-import { useRouter } from 'next/router'
-import Web3 from 'web3';
+import React, { useEffect, useMemo } from 'react';
+import { Typography, Paper, Button, Tooltip, withStyles } from '@material-ui/core';
+import classes from './chain.module.css';
+import stores, { useAccount, useChain } from '../../stores/index.js';
+import { ACCOUNT_CONFIGURED } from '../../stores/constants';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import RPCList from '../RPCList';
+import { addToNetwork, renderProviderText } from '../../utils';
+import { assetPrefix } from '../../base/env';
 
-import classes from './chain.module.css'
-
-import stores from '../../stores/index.js'
-import { getProvider } from '../../utils'
-
-import {
-  ERROR,
-  CONNECT_WALLET,
-  TRY_CONNECT_WALLET,
-  ACCOUNT_CONFIGURED
-} from '../../stores/constants'
+const ExpandButton = withStyles((theme) => ({
+  root: {
+    width: '100%',
+    marginTop: '12px',
+    marginBottom: '-24px',
+  },
+}))(Button);
 
 export default function Chain({ chain }) {
-  const router = useRouter()
-
-  const [ account, setAccount ] = useState(null)
+  const account = useAccount((state) => state.account);
+  const setAccount = useAccount((state) => state.setAccount);
 
   useEffect(() => {
     const accountConfigure = () => {
-      const accountStore = stores.accountStore.getStore('account')
-      setAccount(accountStore)
-    }
+      const accountStore = stores.accountStore.getStore('account');
+      setAccount(accountStore);
+    };
 
-    stores.emitter.on(ACCOUNT_CONFIGURED, accountConfigure)
+    stores.emitter.on(ACCOUNT_CONFIGURED, accountConfigure);
 
-    const accountStore = stores.accountStore.getStore('account')
-    setAccount(accountStore)
+    const accountStore = stores.accountStore.getStore('account');
+    setAccount(accountStore);
 
     return () => {
-      stores.emitter.removeListener(ACCOUNT_CONFIGURED, accountConfigure)
-    }
-  }, [])
+      stores.emitter.removeListener(ACCOUNT_CONFIGURED, accountConfigure);
+    };
+  }, []);
 
-  const toHex = (num) => {
-    return '0x'+num.toString(16)
-  }
+  const icon = useMemo(() => {
+    return chain.chainSlug ? `${assetPrefix}/images/rsz_${chain.chainSlug}.svg` : `${assetPrefix}/unknown-logo.png`;
+  }, [chain]);
 
-  const addToNetwork = () => {
-    if(!(account && account.address)) {
-      stores.dispatcher.dispatch({ type: TRY_CONNECT_WALLET })
-      return
-    }
+  const chainId = useChain((state) => state.id);
+  const updateChain = useChain((state) => state.updateChain);
 
-    const params = {
-      chainId: toHex(chain.chainId), // A 0x-prefixed hexadecimal string
-      chainName: chain.name,
-      nativeCurrency: {
-        name: chain.nativeCurrency.name,
-        symbol: chain.nativeCurrency.symbol, // 2-6 characters long
-        decimals: chain.nativeCurrency.decimals,
-      },
-      rpcUrls: chain.rpc,
-      blockExplorerUrls: [ ((chain.explorers && chain.explorers.length > 0 && chain.explorers[0].url) ? chain.explorers[0].url : chain.infoURL) ]
-    }
-
-    window.web3.eth.getAccounts((error, accounts) => {
-      window.ethereum.request({
-        method: 'wallet_addEthereumChain',
-        params: [params, accounts[0]],
-      })
-      .then((result) => {
-        console.log(result)
-      })
-      .catch((error) => {
-        stores.emitter.emit(ERROR, error.message ? error.message : error)
-        console.log(error)
-      });
-    })
-  }
-
-  const renderProviderText = () => {
-
-    if(account && account.address) {
-      const providerTextList = {
-        Metamask: 'Add to Metamask',
-        imToken: 'Add to imToken',
-        Wallet: 'Add to Wallet'
-      }
-      return providerTextList[getProvider()]
+  const handleClick = () => {
+    if (chain.chainId === chainId) {
+      updateChain(null);
     } else {
-      return 'Connect wallet'
+      updateChain(chain.chainId);
     }
+  };
 
-  }
+  const showAddlInfo = chain.chainId === chainId;
 
-  if(!chain) {
-    return <div></div>
+  if (!chain) {
+    return <div></div>;
   }
 
   return (
-    <Paper elevation={ 1 } className={ classes.chainContainer } key={ chain.chainId }>
-      <div className={ classes.chainNameContainer }>
-        <img
-          src='/connectors/icn-asd.svg'
-          onError={e => {
-            e.target.onerror = null;
-            e.target.src = "/chains/unknown-logo.png";
-          }}
-          width={ 28 }
-          height={ 28 }
-          className={ classes.avatar }
-        />
-        <Tooltip title={ chain.name }>
-          <Typography variant='h3' className={ classes.name } noWrap>
-            <a href={ chain.infoURL } target="_blank" rel="noreferrer">
-              { chain.name }
-            </a>
-          </Typography>
-        </Tooltip>
-      </div>
-      <div className={ classes.chainInfoContainer }>
-        <div className={ classes.dataPoint }>
-          <Typography variant='subtitle1' color='textSecondary' className={ classes.dataPointHeader} >ChainID</Typography>
-          <Typography variant='h5'>{ chain.chainId }</Typography>
+    <>
+      <Paper elevation={1} className={classes.chainContainer} key={chain.chainId}>
+        <div className={classes.chainNameContainer}>
+          <img
+            src={icon}
+            width={28}
+            height={28}
+            className={classes.avatar}
+          />
+
+          <Tooltip title={chain.name}>
+            <Typography variant="h3" className={classes.name} noWrap style={{ marginLeft: '24px' }}>
+              <a href={chain.infoURL} target="_blank" rel="noreferrer">
+                {chain.name}
+              </a>
+            </Typography>
+          </Tooltip>
         </div>
-        <div className={ classes.dataPoint }>
-          <Typography variant='subtitle1' color='textSecondary' className={ classes.dataPointHeader}>Currency</Typography>
-          <Typography variant='h5'>{ chain.nativeCurrency ? chain.nativeCurrency.symbol : 'none' }</Typography>
+        <div className={classes.chainInfoContainer}>
+          <div className={classes.dataPoint}>
+            <Typography variant="subtitle1" color="textSecondary" className={classes.dataPointHeader}>
+              ChainID
+            </Typography>
+            <Typography variant="h5">{chain.chainId}</Typography>
+          </div>
+          <div className={classes.dataPoint}>
+            <Typography variant="subtitle1" color="textSecondary" className={classes.dataPointHeader}>
+              Currency
+            </Typography>
+            <Typography variant="h5">{chain.nativeCurrency ? chain.nativeCurrency.symbol : 'none'}</Typography>
+          </div>
         </div>
-      </div>
-      <div className={ classes.addButton }>
-        <Button
-          variant='outlined'
-          color='primary'
-          onClick={ addToNetwork }
-        >
-          { renderProviderText() }
-        </Button>
-      </div>
-    </Paper>
-  )
+        <div className={classes.addButton}>
+          <Button variant="outlined" color="primary" onClick={() => addToNetwork(account, chain)}>
+            {renderProviderText(account)}
+          </Button>
+        </div>
+        <ExpandButton onClick={handleClick}>
+          <ExpandMoreIcon style={{ transform: showAddlInfo ? 'rotate(180deg)' : '', transition: 'all 0.2s ease' }} />
+        </ExpandButton>
+      </Paper>
+      {showAddlInfo && <RPCList chain={chain} />}
+    </>
+  );
 }
