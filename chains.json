@@ -12402,12 +12402,13 @@
     "name": "Qitmeer",
     "chain": "MEER",
     "rpc": [
+      "https://qng.rpc.qitmeer.io",
+      "https://rpc.woowow.io",
+      "https://mainnet.meerlabs.com",
+      "https://rpc.dimai.ai",
       "https://evm-dataseed1.meerscan.io",
       "https://evm-dataseed2.meerscan.io",
-      "https://evm-dataseed3.meerscan.io",
-      "https://evm-dataseed.meerscan.com",
-      "https://evm-dataseed1.meerscan.com",
-      "https://evm-dataseed2.meerscan.com"
+      "https://evm-dataseed3.meerscan.io"
     ],
     "faucets": [],
     "nativeCurrency": {
@@ -12424,7 +12425,11 @@
     "explorers": [
       {
         "name": "meerscan",
-        "url": "https://evm.meerscan.com",
+        "url": "https://qng.meerscan.com",
+        "standard": "none"
+      },{
+        "name": "QNG Mainnet Qitmeer Explorer",
+        "url": "https://qng.qitmneer.io",
         "standard": "none"
       }
     ]
@@ -15301,8 +15306,14 @@
   {
     "name": "Qitmeer Network Testnet",
     "chain": "MEER",
-    "rpc": [],
-    "faucets": [],
+    "rpc": [
+      "https://testnet-qng.rpc.qitmeer.io",
+      "https://testnet.meerlabs.com",
+      "https://meer.testnet.meerfans.club"
+    ],
+    "faucets": [
+      "https://faucet.qitmeer.io"
+    ],
     "nativeCurrency": {
       "name": "Qitmeer Testnet",
       "symbol": "MEER-T",
