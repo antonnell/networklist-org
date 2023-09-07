@@ -12425,7 +12425,7 @@
     "explorers": [
       {
         "name": "meerscan",
-        "url": "https://qng.meerscan.com",
+        "url": "https://qng.meerscan.io",
         "standard": "none"
       },{
         "name": "QNG Mainnet Qitmeer Explorer",
