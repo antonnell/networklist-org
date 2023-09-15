@@ -24643,4 +24643,35 @@
       }
     ]
   }
+{
+    "name": "Ethereum Express",
+    "chainId": 8957,
+    "shortName": "ETE",
+    "chain": "ETE",
+    "network": "mainnet",
+    "networkId": 8957,
+    "nativeCurrency": {
+        "name": "ETE",
+        "symbol": "ETE",
+        "decimals": 18
+    },
+    "rpc": [
+        "https://www.etescan.net/rpc",
+        "https://www.etelondon.com/rpc",
+        "https://test.uaechain.net/rpc",
+        "https://rpc.web3russia.org/ete",
+        "https://www.etecanada.com/rpc",
+        "https://node.brazildao.biz/ete",
+        "https://ete.indiaio.net/fast",
+        "https://ete.auhacker.xyz/data",
+        "https://service.saalliance.net/ete"
+    ],
+    "faucets": [],
+    "infoURL": "https://www.ethereumexpress.net",
+    "app_resource": {
+        "ic_chain_select": "https://teddynft.oss-ap-southeast-1.aliyuncs.com/ete/select.png",
+        "ic_chain_unselect": "https://teddynft.oss-ap-southeast-1.aliyuncs.com/ete/unselect.png",
+        "color_chain_bg": "0x013162"
+    }
+}
 ]
