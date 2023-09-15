@@ -202,7 +202,6 @@
       "decimals": 18
     },
     "rpc": [
-      "https://fsc-dataseed1.fonscan.io",
       "https://fsc-dataseed2.fonscan.io"
     ],
     "faucets": [],
