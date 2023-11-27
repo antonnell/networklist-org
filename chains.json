@@ -2668,22 +2668,30 @@
     "infoURL": "https://www.klaytn.com/"
   },
   {
-    "name": "TomoChain",
+    "name": "Viction Mainnet",
     "chainId": 88,
-    "shortName": "tomo",
-    "chain": "TOMO",
+    "shortName": "vic",
+    "chain": "VIC",
     "network": "mainnet",
     "networkId": 88,
     "nativeCurrency": {
-      "name": "TomoChain Ether",
-      "symbol": "TOMO",
+      "name": "Viction Ether",
+      "symbol": "VIC",
       "decimals": 18
     },
     "rpc": [
       "https://rpc.tomochain.com"
     ],
     "faucets": [],
-    "infoURL": "https://tomocoin.io"
+    "infoURL": "https://www.vicscan.xyz/",
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1701074390781.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1701074408625.png",
+      "color_chain_bg": "0xF5F2C4",
+      "color_chain_text": "0x1E1E1E",
+      "ic_chain_unselect_dark": "https://hk.tpstatic.net/token/tokenpocket-1701074424755.png",
+      "ic_home_logo": "https://hk.tpstatic.net/token/tokenpocket-1701074444858.png"
+    }
   },
   {
     "name": "Wanchain",
