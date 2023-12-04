@@ -24689,5 +24689,30 @@
       "ic_chain_unselect": "https://teddynft.oss-ap-southeast-1.aliyuncs.com/ete/unselect.png",
       "color_chain_bg": "0x013162"
     }
-  }
+  },
+  {
+    "name": "Pink Chain",
+    "chainId": 9801,
+    "shortName": "pink",
+    "chain": "Pink",
+    "network": "mainnet",
+    "networkId": 9801,
+    "nativeCurrency": {
+        "name": "Pink Coin",
+        "symbol": "PKB",
+        "decimals": 18
+    },
+    "rpc": [
+        "https://pinkchain.co/",
+        "https://rpc1.pinkchain.co/",
+        "https://rpc2.pinkchain.co/"
+    ],
+    "faucets": [],
+    "infoURL": "https://pink-chain.com/",
+    "app_resource": {
+        "ic_chain_select": "https://photos.pinksale.finance/file/pinksale-logo-upload/1701675121582-28ecbadd98de7c6db5ea578a380e4468.png",
+        "ic_chain_unselect": "https://photos.pinksale.finance/file/pinksale-logo-upload/1701675075658-6f8825a9413b793fe9462b093fb3c906.png",
+        "color_chain_bg": "0xf95192"
+    }
+}
 ]
