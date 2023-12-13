@@ -29594,5 +29594,30 @@
         "standard": "EIP3091"
       }
     ]
+  },
+  {
+    "name": "ZKFair Testnet",
+    "title": "ZKFair Testnet",
+    "chain": "ZKFair",
+    "rpc": [
+      "https://testnet-rpc.zkfair.io"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "USDC",
+      "symbol": "USDC",
+      "decimals": 18
+    },
+    "infoURL": "https://zkfair.io/",
+    "shortName": "zkfairtest",
+    "chainId": 43851,
+    "networkId": 43851,
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://testnet-scan.zkfair.io",
+        "standard": "EIP3091"
+      }
+    ]
   }
 ]
