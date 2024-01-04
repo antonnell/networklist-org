@@ -19083,9 +19083,9 @@
     "name": "AlveyChain Mainnet",
     "chain": "ALV",
     "rpc": [
-      "https://rpc.alvey.io/rpc",
-      "https://rpc2.alvey.io/rpc",
-      "https://rpc.alveycoin.com/rpc"
+      "https://elves-core1.alvey.io",
+      "https://elves-core2.alvey.io",
+      "https://elves-core3.alvey.io"
     ],
     "nativeCurrency": {
       "name": "AlveyCoin",
