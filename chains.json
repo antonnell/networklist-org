@@ -29594,5 +29594,30 @@
         "standard": "EIP3091"
       }
     ]
+  },
+  {
+    "name": "Blast Sepolia",
+    "chain": "Blast Sepolia",
+    "icon": "Blast Sepolia",
+    "rpc": [
+      "https://sepolia.blast.io"
+    ],
+    "faucets": [],
+    "nativeCurrency": {
+      "name": "Ether",
+      "symbol": "ETH",
+      "decimals": 18
+    },
+    "infoURL": "blastscan.io/",
+    "shortName": "Blast Sepolia",
+    "chainId": 168587773,
+    "networkId": 168587773,
+    "explorers": [
+      {
+        "name": "Blast testnet",
+        "url": "https://testnet.blastscan.io/",
+        "standard": "EIP3091"
+      }
+    ]
   }
 ]
