@@ -29618,7 +29618,15 @@
         "url": "https://testnet.blastscan.io/",
         "standard": "EIP3091"
       }
-    ]
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/dapp/tokenpocket-1706000813543.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/dapp/tokenpocket-1706000827437.png",
+      "color_chain_bg": "0xFDFE03",
+      "color_chain_text": "0x000000",
+      "ic_chain_unselect_dark": "https://hk.tpstatic.net/dapp/tokenpocket-1706000856201.png",
+      "ic_home_logo": "https://hk.tpstatic.net/dapp/tokenpocket-1706000876568.png"
+    }
   },
   {
     "name": "ProtoJumbo Testnet",
