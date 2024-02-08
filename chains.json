@@ -152,16 +152,18 @@
     "network": "mainnet",
     "networkId": 4200,
     "nativeCurrency": {
-        "name": "BTC",
-        "symbol": "BTC",
-        "decimals": 18
+      "name": "BTC",
+      "symbol": "BTC",
+      "decimals": 18
     },
     "rpc": [
-        "https://rpc.merlinchain.io",
-        {
-          "name":"blockscout"
-          "url":"https://scan.merlinchain.io/"
-    }
+      "https://rpc.merlinchain.io"
+    ],
+    "explorers": [
+      {
+        "name": "blockscout",
+        "url": "https://scan.merlinchain.io/"
+      }
     ]
   },
   {
