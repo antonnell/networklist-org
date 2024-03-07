@@ -33606,5 +33606,36 @@
       "chain": "eip155-11155111",
       "bridges": []
     }
+  },
+  {
+    "name": "WDC Chain",
+    "chainId": 999999,
+    "shortName": "WDC",
+    "chain": "WDC",
+    "network": "mainnet",
+    "networkId": 999999,
+    "nativeCurrency": {
+      "name": "World",
+      "symbol": "WDC",
+      "decimals": 18
+    },
+    "rpc": [
+      "https://rpc.worldcoin.group"
+    ],
+    "faucets": [],
+    "explorers": [
+      {
+        "name": "WDCScan",
+        "url": "https://scan.worldcoin.group",
+        "standard": "EIP3091"
+      }
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://i.ibb.co/yNVBF02/light.png",
+      "ic_chain_unselect": "https://i.ibb.co/qx6jJGf/unlight.png",
+      "color_chain_bg": "0x110044",
+      "color_chain_text": "0x15cad3",
+      "ic_home_logo": "https://i.ibb.co/HpFhKD5/bg.png"
+    }
   }
 ]
