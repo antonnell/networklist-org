@@ -33647,11 +33647,11 @@
       }
     ],
     "app_resource": {
-      "ic_chain_select": "https://i.ibb.co/yNVBF02/light.png",
-      "ic_chain_unselect": "https://i.ibb.co/qx6jJGf/unlight.png",
+      "ic_chain_select": "https://i.postimg.cc/y6hR87gM/light.png",
+      "ic_chain_unselect": "https://i.postimg.cc/yDX71vPW/unlight.png",
       "color_chain_bg": "0x110044",
       "color_chain_text": "0x15cad3",
-      "ic_home_logo": "https://i.ibb.co/HpFhKD5/bg.png"
+      "ic_home_logo": "https://i.postimg.cc/7Y6Lr4gM/bg.png"
     }
   }
 ]
