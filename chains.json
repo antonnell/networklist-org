@@ -12330,7 +12330,15 @@
         "url": "https://explorer.endurance.fusionist.io",
         "standard": "EIP3091"
       }
-    ]
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1709886151485.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1709886075208.png",
+      "color_chain_bg": "0x050504",
+      "color_chain_text": "0xFFC783",
+      "ic_home_logo": "hhttps://hk.tpstatic.net/token/tokenpocket-1709886106935.png",
+      "ic_chain_unselect_dark":"https://hk.tpstatic.net/token/tokenpocket-1709886092252.png"
+    }
   },
   {
     "name": "Canto Testnet",
@@ -32939,7 +32947,15 @@
         "icon": "berachain",
         "standard": "none"
       }
-    ]
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1709885929619.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1709885915602.png",
+      "color_chain_bg": "0xEF821F",
+      "color_chain_text": "0x050504",
+      "ic_home_logo": "https://hk.tpstatic.net/token/tokenpocket-1709885984851.png",
+      "ic_chain_unselect_dark":"https://hk.tpstatic.net/token/tokenpocket-1709885969274.png"
+    }
   },
   {
     "name": "Hizoco mainnet",
