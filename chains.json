@@ -24325,7 +24325,15 @@
         "url": "https://explorer.zora.energy",
         "standard": "EIP3091"
       }
-    ]
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1709899028504.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1709899005184.png",
+      "color_chain_bg": "0x000000",
+      "color_chain_text": "0xFFFFFF",
+      "ic_chain_unselect_dark": "https://hk.tpstatic.net/token/tokenpocket-1709899016829.png",
+      "ic_home_logo": "https://hk.tpstatic.net/token/tokenpocket-1709899043712.png"
+    }
   },
   {
     "name": "HAPchain",
@@ -28054,7 +28062,15 @@
         "url": "https://explorer.mode.network",
         "standard": "none"
       }
-    ]
+    ],
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1709899308595.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1709899325224.png",
+      "color_chain_bg": "0xD9F417",
+      "color_chain_text": "0x000000",
+      "ic_chain_unselect_dark": "https://hk.tpstatic.net/token/tokenpocket-1709899339092.png",
+      "ic_home_logo": "https://hk.tpstatic.net/token/tokenpocket-1709899353868.png"
+    }
   },
   {
     "name": "ConnectorManager",
