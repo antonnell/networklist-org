@@ -26413,36 +26413,47 @@
     "status": "active"
   },
   {
-    "name": "Morphism Testnet",
+    "name": "Morph Testnet",
     "chain": "ETH",
     "rpc": [
-      "https://rpc-testnet.morphism.xyz"
+        "https://rpc-testnet.morphl2.io"
     ],
-    "faucets": [],
+    "faucets": [
+
+    ],
     "nativeCurrency": {
-      "name": "Ether",
-      "symbol": "ETH",
-      "decimals": 18
+        "name": "Ether",
+        "symbol": "ETH",
+        "decimals": 18
     },
-    "infoURL": "https://morphism.xyz",
+    "infoURL": "https://morphl2.io",
     "shortName": "tmorph",
     "chainId": 2710,
     "networkId": 2710,
+    "slip44": 1,
     "explorers": [
-      {
-        "name": "Morphism Testnet Explorer",
-        "url": "https://explorer-testnet.morphism.xyz",
-        "standard": "EIP3091"
-      }
+        {
+            "name": "Morph Testnet Explorer",
+            "url": "https://explorer-testnet.morphl2.io",
+            "standard": "EIP3091"
+        }
     ],
     "parent": {
-      "type": "L2",
-      "chain": "eip155-1",
-      "bridges": [
-        {
-          "url": "https://bridge-testnet.morphism.xyz"
-        }
-      ]
+        "type": "L2",
+        "chain": "eip155-1",
+        "bridges": [
+            {
+                "url": "https://bridge-testnet.morphl2.io"
+            }
+        ]
+    },
+    "app_resource": {
+      "ic_chain_select": "https://hk.tpstatic.net/token/tokenpocket-1709898729370.png",
+      "ic_chain_unselect": "https://hk.tpstatic.net/token/tokenpocket-1709898717628.png",
+      "color_chain_bg": "0x000000",
+      "color_chain_text": "0x6AF495",
+      "ic_chain_unselect_dark": "https://hk.tpstatic.net/token/tokenpocket-1709898740826.png",
+      "ic_home_logo": "https://hk.tpstatic.net/token/tokenpocket-1709898759382.png"
     }
   },
   {
