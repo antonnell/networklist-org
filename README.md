@@ -46,9 +46,12 @@ Example:
     "faucets": [],
     "infoURL": "https://forum.poa.network/c/xdai-chain",
     "app_resource": {
-        "ic_chain_select": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png",
-        "ic_chain_unselect": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/0.png",
-        "color_chain_bg": "0x58B2AF"
+        "ic_chain_select": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png",//network icon selected status
+        "ic_chain_unselect": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/0.png",//network icon unselected status in light mode
+        "ic_chain_unselect_dark": "",//network icon unselected status in dark mode
+        "color_chain_bg": "0x58B2AF",//wallet card backgroud color
+        "color_chain_text": "0xFFFFFF",//wallet card text color
+        "ic_home_logo":""//logo on top of asset page
     }
 }
 ```
@@ -84,9 +87,12 @@ Fork该仓库并在`chains.json` 中加入您的EVM链信息
     "faucets": [],
     "infoURL": "https://forum.poa.network/c/xdai-chain",
     "app_resource": {
-        "ic_chain_select": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png",
-        "ic_chain_unselect": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/0.png",
-        "color_chain_bg": "0x58B2AF"
+        "ic_chain_select": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/1.png", //链icon选中状态
+        "ic_chain_unselect": "https://tp-upload.cdn.bcebos.com/v1/blockChain/xDAI/0.png", //链icon白天模式的未选择状态
+        "ic_chain_unselect_dark": "", //链icon黑夜模式的未选择状态
+        "color_chain_bg": "0x58B2AF", //选择钱包时，卡片的背景颜色
+        "color_chain_text": "0xFFFFFF", //选择钱包时，卡片的文字颜色
+        "ic_home_logo":"" //首页卡片显示的logo
     }
 }
 ```
